@@ -22,7 +22,7 @@ require 'geoloqi'
 require 'csv'
 
 # Your access token. Retreive from https://developers.geoloqi.com
-ACCESS_TOKEN = 'YOUR ACCESS TOKEN GOES HERE'
+ACCESS_TOKEN = 'ed7-9e125232cf8c95503eb94406ba2f6c99ea8ad9d8'
 
 # Approximate ground level line-of-sight, in meters
 LINE_OF_SIGHT = (4.8*1000).freeze
@@ -64,7 +64,7 @@ CSV.foreach("dinosaurs.tsv", col_sep: "\t", encoding: 'ISO-8859-1:UTF-8') do |di
   geotrigger = geoloqi.post 'trigger/create', {
     place_id: dino_place[:place_id],
     type:     'message',
-    text:     "A#{'n' if %w{aeiou}.include?(dino[:name][0].downcase)} #{dino[:name]} was found where you are right now",
+    text:     "A#{'n' if %w{a e i o u}.include?(dino[:name][0].downcase)} #{dino[:name]} was found where you are right now",
     url:      "http://en.wikipedia.org/wiki/#{dino[:name]}",
     key:      dino[:id]
   }
