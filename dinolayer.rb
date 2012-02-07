@@ -22,7 +22,7 @@ require 'geoloqi'
 require 'csv'
 
 # Your access token. Retreive from https://developers.geoloqi.com
-ACCESS_TOKEN = 'ed7-9e125232cf8c95503eb94406ba2f6c99ea8ad9d8'
+ACCESS_TOKEN = 'YOUR ACCESS TOKEN GOES HERE'
 
 # Approximate ground level line-of-sight, in meters
 LINE_OF_SIGHT = (4.8*1000).freeze
