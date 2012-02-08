@@ -22,7 +22,13 @@ require 'geoloqi'
 require 'csv'
 
 # Your access token. Retreive from https://developers.geoloqi.com
-ACCESS_TOKEN = 'YOUR ACCESS TOKEN GOES HERE'
+ACCESS_TOKEN = ARGV[0]
+
+if ACCESS_TOKEN.nil?
+  puts "You need to provide an access token. Retrieve from https://developers.geoloqi.com"
+  puts "Usage: ruby ./dinolayer.rb YOUR_ACCESS_TOKEN"
+  exit 1
+end
 
 # Approximate ground level line-of-sight, in meters
 LINE_OF_SIGHT = (4.8*1000).freeze
